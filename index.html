@@ -5,53 +5,287 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <title>Integrate Records</title>
     </head>
     <body>
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
+        <header class="header">
+            <nav class="nav">
+                <div class="nav__container">
                     <a href="#" class="nav__logo">Integrate Records</a>
-                </div>
-
-                <div class="nav__menu" id="nav-menu">
-                    <div class="nav__close">
-                        <ion-icon name="close-outline" class="nav__close-icon" id="nav-close"></ion-icon>
+                    <div class="nav__menu" id="nav-menu">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                            <li class="nav__item"><a href="#releases" class="nav__link">Releases</a></li>
+                            <li class="nav__item"><a href="#artists" class="nav__link">Artists</a></li>
+                            <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        </ul>
+                        <div class="nav__close" id="nav-close">
+                            <i class="fas fa-times"></i>
+                        </div>
                     </div>
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
                 </div>
             </nav>
         </header>
 
-        <main class="l-main bd-grid">
-            <div class="home">
-                <h1 class="home__title">COMING SOON</h1>
-
-                <div class="home__img">
-                    <!-- Parar ver el efecto de hover effect abra la pagina web en localhost -->
+        <main class="main">
+            <!-- Hero Section -->
+            <section class="hero" id="home">
+                <div class="hero__container">
+                    <div class="hero__content">
+                        <h1 class="hero__title">Integrate Records</h1>
+                        <p class="hero__subtitle">Electronic Music Label</p>
+                        <p class="hero__description">Discover our latest releases and immerse yourself in cutting-edge electronic music.</p>
+                        <a href="#releases" class="hero__button">Explore Releases</a>
+                    </div>
                 </div>
+            </section>
 
-                <div class="home__social">
-                    <a href="#" class="home__social-link">soundcloud</a>
-                    <a href="#" class="home__social-link">instagram</a>
-                    <a href="#" class="home__social-link">youtube</a>
+            <!-- Releases Section -->
+            <section class="releases" id="releases">
+                <div class="releases__container">
+                    <h2 class="section__title">Latest Releases</h2>
+                    <div class="releases__grid">
+                        <a class="release-card spotify-cta" href="https://open.spotify.com/artist/6gDlembnYNk1HeUXOzC8m8?si=hvo3SHtzRN6Wdx3q24x3KQ" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Stream on Spotify</h3>
+                                <p class="release-card__subtitle">Follow us for updates</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card turismo" href="https://www.beatport.com/release/turismo/5143992" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Turismo</h3>
+                                <p class="release-card__subtitle">Latest Release</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card obscurity" href="https://www.beatport.com/release/obscurity/5094539" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Obscurity</h3>
+                                <p class="release-card__subtitle">Electronic</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card coercion" href="https://www.beatport.com/release/coercion/5020299" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Coercion</h3>
+                                <p class="release-card__subtitle">Techno</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card osmosis" href="https://www.beatport.com/release/osmosis/4918302" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Osmosis</h3>
+                                <p class="release-card__subtitle">Ambient</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card tranquilizer" href="https://www.beatport.com/release/tranquilizer/4918038" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Tranquilizer</h3>
+                                <p class="release-card__subtitle">Deep House</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card building" href="https://www.beatport.com/release/building-up-deluxe/4694735" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Building Up (Remix)</h3>
+                                <p class="release-card__subtitle">Remix</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card muted" href="https://www.beatport.com/release/muted-ep/4502558" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Muted EP</h3>
+                                <p class="release-card__subtitle">EP</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card invoke" href="https://www.beatport.com/release/invoke/4502339" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Invoke</h3>
+                                <p class="release-card__subtitle">Electronic</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card illusion" href="https://www.beatport.com/release/illusion/4502329" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Illusion</h3>
+                                <p class="release-card__subtitle">Progressive</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card escalation" href="https://www.beatport.com/release/escalation/4502336" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Escalation</h3>
+                                <p class="release-card__subtitle">Techno</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card step-into" href="https://www.beatport.com/release/step-into/4502330" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Step Into</h3>
+                                <p class="release-card__subtitle">House</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card core-dump" href="https://www.beatport.com/release/core-dump-ep/4502337" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Core Dump EP</h3>
+                                <p class="release-card__subtitle">EP</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card strip" href="https://www.beatport.com/release/strip/4502343" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Strip</h3>
+                                <p class="release-card__subtitle">Minimal</p>
+                            </div>
+                        </a>
+                        
+                        <a class="release-card double-vision" href="https://www.beatport.com/release/double-vision/3753189" rel="noopener" target="_blank">
+                            <div class="release-card__content">
+                                <h3 class="release-card__title">Double Vision EP</h3>
+                                <p class="release-card__subtitle">EP</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </section>
 
-                <h2 class="home__subtitle">RELEASES<br>MIXES<br>EVENTS</h2>
+            <!-- Artists Section -->
+            <section class="artists" id="artists">
+                <div class="artists__container">
+                    <h2 class="section__title">Featured Artists</h2>
+                    <div class="artists__grid">
+                        <div class="artist-card">
+                            <div class="artist-card__image">
+                                <div class="artist-card__placeholder">AR</div>
+                            </div>
+                            <h3 class="artist-card__name">Aali Rehman</h3>
+                            <p class="artist-card__description">Electronic Producer & DJ</p>
+                            <div class="artist-card__social">
+                                <a href="#" class="social-icon" title="Spotify">
+                                    <i class="fab fa-spotify"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Beatport">
+                                    <i class="fas fa-music"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Bandcamp">
+                                    <i class="fab fa-bandcamp"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="SoundCloud">
+                                    <i class="fab fa-soundcloud"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Apple Music">
+                                    <i class="fab fa-apple"></i>
+                                </a>
+                            </div>
+                        </div>
 
-                <a href="#" class="home__button">Contact <ion-icon name="arrow-forward-outline" class="home__button-icon"></ion-icon></a>
+                        <div class="artist-card">
+                            <div class="artist-card__image">
+                                <div class="artist-card__placeholder">P</div>
+                            </div>
+                            <h3 class="artist-card__name">Piste</h3>
+                            <p class="artist-card__description">Techno Producer</p>
+                            <div class="artist-card__social">
+                                <a href="#" class="social-icon" title="Spotify">
+                                    <i class="fab fa-spotify"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Beatport">
+                                    <i class="fas fa-music"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Bandcamp">
+                                    <i class="fab fa-bandcamp"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="SoundCloud">
+                                    <i class="fab fa-soundcloud"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Apple Music">
+                                    <i class="fab fa-apple"></i>
+                                </a>
+                            </div>
+                        </div>
 
-            </div>
+                        <div class="artist-card">
+                            <div class="artist-card__image">
+                                <div class="artist-card__placeholder">L</div>
+                            </div>
+                            <h3 class="artist-card__name">LAFF</h3>
+                            <p class="artist-card__description">House & Ambient Artist</p>
+                            <div class="artist-card__social">
+                                <a href="#" class="social-icon" title="Spotify">
+                                    <i class="fab fa-spotify"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Beatport">
+                                    <i class="fas fa-music"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Bandcamp">
+                                    <i class="fab fa-bandcamp"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="SoundCloud">
+                                    <i class="fab fa-soundcloud"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="social-icon" title="Apple Music">
+                                    <i class="fab fa-apple"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about" id="about">
+                <div class="about__container">
+                    <h2 class="section__title">About Integrate Records</h2>
+                    <div class="about__content">
+                        <p class="about__text">
+                            Integrate Records is dedicated to pushing the boundaries of electronic music. 
+                            We curate and release cutting-edge tracks that span across techno, house, ambient, 
+                            and experimental genres. Our label represents the future of electronic music, 
+                            bringing together innovative artists and forward-thinking sounds.
+                        </p>
+                        <div class="about__social">
+                            <a href="#" class="social__link">SoundCloud</a>
+                            <a href="#" class="social__link">Instagram</a>
+                            <a href="#" class="social__link">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
-        <!-- MAIN -->
+        <footer class="footer">
+            <div class="footer__container">
+                <p>&copy; 2024 Integrate Records. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         <script src="assets/js/main.js"></script>
     </body>
 </html>
