@@ -21,18 +21,19 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: var(--gradient-bg);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.4;
     overflow-x: hidden;
+    font-weight: 400;
 }
 
 /* Header Styles */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
     right: 0;
     z-index: 1000;
     background: rgba(10, 10, 10, 0.95);
@@ -44,22 +45,25 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+          justify-content: space-between;
+          align-items: center;
     height: 70px;
 }
 
 .nav__logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
     text-decoration: none;
     transition: var(--transition);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
 }
 
 .nav__logo:hover {
-    color: var(--text-primary);
+    color: var(--accent-color);
+    transform: scale(1.05);
 }
 
 .nav__list {
@@ -104,8 +108,8 @@ body {
 
 .nav__close {
     display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+  font-size: 1.5rem;
+  cursor: pointer;
     color: var(--text-primary);
 }
 
@@ -120,8 +124,65 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%),
+        linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.03) 49%, rgba(255, 255, 255, 0.03) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.03) 49%, rgba(255, 255, 255, 0.03) 51%, transparent 52%);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-position: 0 0, 0 0, 20px 20px;
     position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 98px,
+            rgba(255, 255, 255, 0.02) 100px,
+            rgba(255, 255, 255, 0.02) 102px,
+            transparent 104px,
+            transparent 200px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 98px,
+            rgba(255, 255, 255, 0.015) 100px,
+            rgba(255, 255, 255, 0.015) 102px,
+            transparent 104px,
+            transparent 200px
+        );
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent 0px,
+            transparent 148px,
+            rgba(255, 255, 255, 0.01) 150px,
+            rgba(255, 255, 255, 0.01) 152px,
+            transparent 154px,
+            transparent 300px
+        );
+    opacity: 0.6;
+    z-index: 1;
 }
 
 .hero__container {
@@ -129,14 +190,48 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .hero__title {
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
+    margin-bottom: 2rem;
     animation: fadeInUp 1s ease-out;
+}
+
+.hero__title-main {
+    display: block;
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.2rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.hero__title-sub {
+    display: block;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1;
+    letter-spacing: 0.1em;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+}
+
+.hero__tagline {
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero__tagline-text {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
 }
 
 .hero__subtitle {
@@ -148,41 +243,113 @@ body {
 }
 
 .hero__description {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-muted);
-    margin-bottom: 2rem;
-    max-width: 600px;
+    margin-bottom: 3rem;
+    max-width: 400px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 300;
+    font-style: italic;
     animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .hero__button {
-    display: inline-block;
-    padding: 1rem 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2.5rem;
     background: transparent;
     color: var(--text-primary);
     text-decoration: none;
     border: 1px solid var(--text-secondary);
-    border-radius: var(--border-radius);
-    font-weight: 500;
+    border-radius: 0;
+    font-weight: 400;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     transition: var(--transition);
     animation: fadeInUp 1s ease-out 0.6s both;
+  position: relative;
+    overflow: hidden;
+}
+
+.hero__button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+  height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.hero__button:hover::before {
+    left: 100%;
 }
 
 .hero__button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     border-color: var(--text-primary);
     background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero__button-text {
+    position: relative;
+    z-index: 1;
+}
+
+.hero__button-arrow {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.hero__button:hover .hero__button-arrow {
+    transform: translateX(5px);
 }
 
 /* Section Styles */
 .section__title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 700;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.section__title-text {
+    display: block;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+    margin-bottom: 0.5rem;
+}
+
+.section__title-accent {
+    display: block;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
     color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    position: relative;
+}
+
+.section__title-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--text-primary);
+    opacity: 0.3;
 }
 
 /* Releases Section */
@@ -198,9 +365,9 @@ body {
 }
 
 .releases__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
     margin-top: 3rem;
 }
 
@@ -233,15 +400,20 @@ body {
 }
 
 .release-card__title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
 }
 
 .release-card__subtitle {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
-    font-weight: 400;
+    font-weight: 300;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
 }
 
 /* Album Artwork Backgrounds */
@@ -373,25 +545,31 @@ body {
     transform: scale(1.05);
 }
 
-.artist-card__placeholder {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    text-transform: uppercase;
+.artist-card__avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: var(--transition);
 }
 
 .artist-card__name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
     color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
 }
 
 .artist-card__description {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
-    font-weight: 400;
+    font-weight: 300;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
 }
 
 .artist-card__social {
@@ -422,8 +600,15 @@ body {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-.social-icon i {
-    font-size: 1.1rem;
+.social-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.social-icon:hover img {
+    transform: scale(1.1);
 }
 
 /* Platform-specific hover colors */
@@ -483,8 +668,13 @@ body {
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 2rem;
-    line-height: 1.8;
-}
+    line-height: 1.6;
+    font-weight: 300;
+    font-style: italic;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 .about__social {
     display: flex;
@@ -496,11 +686,32 @@ body {
 .social__link {
     color: var(--text-secondary);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 300;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
     transition: var(--transition);
     padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
+    border-radius: 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.social__link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.social__link:hover::before {
+    left: 100%;
 }
 
 .social__link:hover {
