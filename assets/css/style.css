@@ -422,6 +422,11 @@ body {
     color: white;
 }
 
+.release-card.departure {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://geo-media.beatport.com/image_size/1400x1400/f3ebba76-d2c2-4dde-83c8-d8bba20921e4.jpg");
+    background-size: cover;
+}
+
 .release-card.turismo {
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://geo-media.beatport.com/image_size/1400x1400/2d4e2264-8d8d-4e31-bbb7-8eea57630493.jpg");
     background-size: cover;
