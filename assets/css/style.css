@@ -399,6 +399,23 @@ body {
     color: var(--text-primary);
 }
 
+.release-card__logo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.75rem;
+    filter: brightness(0) invert(1);
+}
+
+.spotify-cta .release-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    background: none;
+}
+
 .release-card__title {
     font-size: 1.1rem;
     font-weight: 500;
@@ -418,8 +435,18 @@ body {
 
 /* Album Artwork Backgrounds */
 .release-card.spotify-cta {
-    background: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
+    background: linear-gradient(135deg, #148a3e 0%, #169c47 100%);
     color: white;
+}
+
+.release-card.permission {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://geo-media.beatport.com/image_size/1400x1400/5ccb80a3-255e-4323-9dbe-07498578cddf.jpg");
+    background-size: cover;
+}
+
+.release-card.departure {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://geo-media.beatport.com/image_size/1400x1400/f3ebba76-d2c2-4dde-83c8-d8bba20921e4.jpg");
+    background-size: cover;
 }
 
 .release-card.turismo {
